@@ -14,12 +14,16 @@ field.forEach(element => {
             kills.textContent = countKills;
             if (countKills === 10) {
                 alert("Вы победили!")
+                countKills = 0;
+                countMiss = 0;
             }
         } else {
             countMiss++;
             miss.textContent = countMiss;
             if (countMiss === 5) {
                 alert("Вы проиграли!")
+                countKills = 0;
+                countMiss = 0;
             }
         }
     }
