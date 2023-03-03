@@ -16,6 +16,8 @@ field.forEach(element => {
                 alert("Вы победили!")
                 countKills = 0;
                 countMiss = 0;
+                kills.textContent = countKills;
+                miss.textContent = countMiss;
             }
         } else {
             countMiss++;
@@ -24,6 +26,8 @@ field.forEach(element => {
                 alert("Вы проиграли!")
                 countKills = 0;
                 countMiss = 0;
+                kills.textContent = countKills;
+                miss.textContent = countMiss;
             }
         }
     }
