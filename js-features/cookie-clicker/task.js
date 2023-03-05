@@ -6,9 +6,5 @@ clickCount.textContent = count;
 image.onclick = function () {
     count ++;
     clickCount.textContent = count;
-    if (clickCount.textContent % 2) {
-        image.width = 250;
-    } else {
-        image.width = 200;
-    }
+    image.width = ++counter.textContent % 2 ? 250 : 200;
 };

@@ -13,23 +13,24 @@ field.forEach(element => {
             countKills++;
             kills.textContent = countKills;
             if (countKills === 10) {
-                alert("Вы победили!")
-                countKills = 0;
-                countMiss = 0;
-                kills.textContent = countKills;
-                miss.textContent = countMiss;
+                alertmess("Вы победили");
             }
         } else {
             countMiss++;
             miss.textContent = countMiss;
             if (countMiss === 5) {
-                alert("Вы проиграли!")
-                countKills = 0;
-                countMiss = 0;
-                kills.textContent = countKills;
-                miss.textContent = countMiss;
+                alertmess("Вы проиграли");
             }
         }
     }
 
 });
+
+function alertmess(alrt) {
+    alert(alrt);
+    countKills = 0;
+    countMiss = 0;
+    kills.textContent = countKills;
+    miss.textContent = countMiss;
+}
+
