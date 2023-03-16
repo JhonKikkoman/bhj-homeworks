@@ -12,8 +12,8 @@ menuLink.forEach((element) => {
             if (!subMenuCheck) {
                 subMenu.classList.add('menu_active');
             }
+            return false
         }
-        return false
     }
 });
 
