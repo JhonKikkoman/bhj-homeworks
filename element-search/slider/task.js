@@ -26,6 +26,5 @@ function sliderItemFunc(arg) {
     }
     sliderDots[counter].classList.add('slider__dot_active');
     sliderItem[counter].classList.add('slider__item_active');
-
 }
 
