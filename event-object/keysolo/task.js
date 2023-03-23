@@ -19,12 +19,10 @@ class Game {
       this.countDownTimer.textContent = wordLen;
       if (wordLen === 0) {
         this.fail();
+        this.setNewWord();
         clearInterval(this.setId);
       }
     }, 1000);
-    if (this.setId != null) {
-      this.setId = null;
-    }
   }
 
   reset() {
@@ -70,7 +68,10 @@ class Game {
 
   setNewWord() {
     const word = this.getWord();
-    clearInterval(this.setId);
+    if (this.setId != null) {
+      this.setId = null;
+      clearInterval(this.setId);
+    }
     this.countDown(word.length)
     this.renderWord(word);
   }
