@@ -15,18 +15,16 @@ class Game {
   countDown(wordLen) {
     this.countDownTimer.textContent = wordLen;
     this.setId = setInterval(() => {
-      const num = Number(wordLen);
-      if (this.setId != null) {
-        clearInterval(this.setId);
-        this.setId = null;
-      }
-      num - 1;
-      this.countDownTimer.textContent = num;
-      if (num === 0) {
-        fail();
+      wordLen--;
+      this.countDownTimer.textContent = wordLen;
+      if (wordLen === 0) {
+        this.fail();
         clearInterval(this.setId);
       }
     }, 1000);
+    if (this.setId != null) {
+      this.setId = null;
+    }
   }
 
   reset() {
@@ -72,6 +70,7 @@ class Game {
 
   setNewWord() {
     const word = this.getWord();
+    clearInterval(this.setId);
     this.countDown(word.length)
     this.renderWord(word);
   }
