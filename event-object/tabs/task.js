@@ -1,4 +1,4 @@
-const tabs = Array.from(document.querySelectorAll('.tabs'));
+const tabs = Array.from(document.querySelectorAll('.tab'));
 const contentTabs = Array.from(document.querySelectorAll('.tab__content'));
 
 tabs.forEach((element, index) => {
@@ -7,6 +7,6 @@ tabs.forEach((element, index) => {
         tabs[tabsActive].classList.remove('tab_active');
         contentTabs[tabsActive].classList.remove('tab__content_active');
         element.classList.add('tab_active');
-        index.classList.add('tab__content_active');
+        contentTabs[index].classList.add('tab__content_active');
     });
 }); 
