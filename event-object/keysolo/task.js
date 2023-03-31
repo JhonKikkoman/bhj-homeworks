@@ -14,13 +14,15 @@ class Game {
 
   countDown(wordLen) {
     this.countDownTimer.textContent = wordLen;
+    if (this.setId != null) {
+      clearInterval(this.setId);
+      this.setId = null;
+    }
     this.setId = setInterval(() => {
       wordLen--;
       this.countDownTimer.textContent = wordLen;
       if (wordLen === 0) {
         this.fail();
-        this.setNewWord();
-        clearInterval(this.setId);
       }
     }, 1000);
   }
@@ -68,11 +70,7 @@ class Game {
 
   setNewWord() {
     const word = this.getWord();
-    if (this.setId != null) {
-      this.setId = null;
-      clearInterval(this.setId);
-    }
-    this.countDown(word.length)
+    this.countDown(word.length);
     this.renderWord(word);
   }
 
