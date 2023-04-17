@@ -27,7 +27,7 @@ isOpen.addEventListener('click', () => {
 });
 
 inPutText.addEventListener('keydown', (e) => {
-    if (inPutText.value === '' && e.code === 'Enter') return;
+    if (inPutText.value === '' || e.code === 'Enter' ||  e.code === 'Backspace') return e.target.value = '';
     if (e.code === 'Enter') {
         messages.innerHTML += `
         <div class="message message_client">
