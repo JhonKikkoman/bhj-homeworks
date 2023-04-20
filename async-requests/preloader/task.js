@@ -2,9 +2,12 @@ const loader = document.querySelector('img.loader_active');
 const items = document.getElementById('items');
 const storage = window.localStorage;
 
-loader.classList.remove('loader_active');
+
 let lastValue = JSON.parse(storage.getItem('lastValue'));
-exchangeRate(lastValue);
+if (lastValue != undefined) {
+    loader.classList.remove('loader_active');
+    exchangeRate(lastValue);
+}
 
 let xhr = new XMLHttpRequest();
 
